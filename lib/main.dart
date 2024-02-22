@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constants.dart';
 import 'package:notes_app/views/notes_view.dart';
 
 void main() {
@@ -19,6 +20,7 @@ class NotesApp extends StatelessWidget {
 }
 
 ThemeData _baseTheme = ThemeData(
+    primaryColor: kPrimaryColor,
     brightness: Brightness.dark,
     fontFamily: "jost",
     bottomSheetTheme:
