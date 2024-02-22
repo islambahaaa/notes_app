@@ -16,7 +16,10 @@ class NotesViewBody extends StatelessWidget {
           SizedBox(
             height: 24,
           ),
-          CustomAppBar(),
+          CustomAppBar(
+            title: 'Notes',
+            icon: Icons.search,
+          ),
           SizedBox(
             height: 8,
           ),
