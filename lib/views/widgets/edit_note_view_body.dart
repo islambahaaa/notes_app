@@ -33,7 +33,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               widget.note.save();
               BlocProvider.of<NotesCubit>(context).fetchNotes();
               Navigator.pop(context);
-              showSnackBar(context, 'Note Edited !', Icons.edit);
+              showSnackBar(context, message: 'Note Edited !', icon: Icons.edit);
             },
             title: 'Edit Note',
             icon: Icons.check,
@@ -45,7 +45,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             onChanged: (value) {
               title = value;
             },
-            hint: widget.note.title,
+            initialValue: widget.note.title,
           ),
           const SizedBox(
             height: 16,
@@ -54,7 +54,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             onChanged: (value) {
               content = value;
             },
-            hint: widget.note.subTitle,
+            initialValue: widget.note.subTitle,
             maxlines: 5,
           ),
           const SizedBox(

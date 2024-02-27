@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/constants.dart';
-import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 
-void showSnackBar(BuildContext context, String message, IconData icon) {
+import 'package:notes_app/constants.dart';
+
+void showSnackBar(
+  BuildContext context, {
+  required String message,
+  required IconData icon,
+}) {
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
     backgroundColor: Colors.transparent,
     elevation: 0,

@@ -9,6 +9,7 @@ import 'package:notes_app/views/edit_note_view.dart';
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key, required this.note});
   final NoteModel note;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -49,8 +50,12 @@ class NoteItem extends StatelessWidget {
                 trailing: IconButton(
                   onPressed: () {
                     note.delete();
-                    showSnackBar(context, 'Note Deleted !', Icons.delete);
                     BlocProvider.of<NotesCubit>(context).fetchNotes();
+                    showSnackBar(
+                      context,
+                      message: 'Note Deleted !',
+                      icon: Icons.delete,
+                    );
                   },
                   icon: const Icon(
                     FontAwesomeIcons.trash,
